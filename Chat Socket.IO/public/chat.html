@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat socket.io</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+        <!--Estilos de css-->
+    <link rel="stylesheet" href="/public/main.css">
+
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/c051c76d48.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <div class="container p-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 id="titulo">Chat</h1>
+                <div id="chat-container">
+                    <input type="text" id="username" placeholder="Username" class="field left" readonly="readonly">
+                    <input type="text" id="message" placeholder="message" autofocus>
+
+                    <div id="chat-window">
+                        <div id="output"></div>
+                        <div id="actions"></div>
+                        <br>
+                    </div>
+                    <div style="text-align: center;">
+                        <button id="send" style="top: 75%; height:50px; width:200px">ENVIAR MENSAJE</button>
+                    </div>
+                    <div class="form-group">
+                        <a href="index.html"><i class="fas fa-arrow-circle-left" id="icono"></i></a>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        document.getElementById('username').value = document.getElementById("username").innerHTML = localStorage.getItem('textValue');
+    </script>
+
+    <script src="/socket.io/socket.io.js" charset="UTF-8"></script>
+    <script src="chat.js" charset="UTF-8"></script>
+</body>
+
+</html>
